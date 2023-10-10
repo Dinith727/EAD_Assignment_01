@@ -1,3 +1,4 @@
+//auth provider 
 import React, { createContext, useState, useEffect, useContext } from "react";
 export const authContext = createContext();
 import { useNavigate } from "react-router-dom";
@@ -18,7 +19,7 @@ export function AuthProvider({ children }) {
 			password: password,
 			role: role,
 		};
-		const _res = await base_api.post("/auth/login", requestBody);
+		const _res = await base_api.post("/auth/login", requestBody); //login url
 
 		window.localStorage.setItem("token", _res.data.token);
 
@@ -32,14 +33,14 @@ export function AuthProvider({ children }) {
 		navigate("/dashboard");
 		window.location.reload();
 	}
-
+	//logout function
 	async function logout() {
 		window.localStorage.removeItem("token");
 		window.localStorage.removeItem("username");
 		window.localStorage.removeItem("role");
 
 		setuser({});
-		navigate("/");
+		navigate("/"); //redirect to main page after log out
 		window.location.reload();
 	}
 	return (

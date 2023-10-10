@@ -1,5 +1,5 @@
 import base_api from "./_base.api";
-
+//add user form
 export async function addUser(formData) {
 	try {
 		const _res = await base_api.post("/admin/add", formData);
@@ -10,7 +10,7 @@ export async function addUser(formData) {
 		return error.response;
 	}
 }
-
+//view all admin users
 export async function getAllAdmins() {
 	try {
 		const _res = await base_api.get("/admin/all?active=true");
@@ -19,7 +19,7 @@ export async function getAllAdmins() {
 		return error;
 	}
 }
-
+//delete admins
 export async function deleteAdmin(id) {
 	try {
 		const _res = await base_api.delete("/admin/delete?id=" + id);
@@ -27,7 +27,7 @@ export async function deleteAdmin(id) {
 		return error;
 	}
 }
-
+//activate admins
 export async function activateAdmin(id, state) {
 	console.log(id, state);
 	try {
@@ -41,7 +41,7 @@ export async function activateAdmin(id, state) {
 		return error;
 	}
 }
-
+//update admins
 export async function updateAdmin(id, username, role) {
 	const reqBody = {
 		_id: id,
@@ -55,6 +55,7 @@ export async function updateAdmin(id, username, role) {
 		return error;
 	}
 }
+//view admins
 export async function getAdmin() {
 	try {
 		const _res = await base_api.get("/admin");
