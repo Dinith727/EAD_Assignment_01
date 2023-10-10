@@ -1,3 +1,6 @@
+
+//CRUD operations that can be performed on admin model
+
 using System.Threading.Tasks;
 using web_service.Models;
 using web_service.Helper;
