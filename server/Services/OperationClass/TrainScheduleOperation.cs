@@ -15,22 +15,25 @@ namespace web_service.Operation
     {
         private readonly IMongoCollection<TrainScheduleModel> _trainScheduleCollection;
 
+        //Constructor for the TrainSheduleOperation class
         public TrainScheduleOperation(IMongoCollection<TrainScheduleModel> travellerCollection)
         {
             _trainScheduleCollection = travellerCollection;
         }
 
+        //add a train
         public async Task CreateAsync(TrainScheduleModel trainScheduleModel)
         {
             await _trainScheduleCollection.InsertOneAsync(trainScheduleModel);
         }
-
+        //Find a train by its ID 
         public async Task<TrainScheduleModel> FindByIdAsync(string id)
         {
             var filter = Builders<TrainScheduleModel>.Filter.Eq("_id", id);
             return await _trainScheduleCollection.Find(filter).FirstOrDefaultAsync();
         }
 
+//Find a reservation by its ID and also getting data from user and trainschedule collections
         public async Task<TrainScheduleModel> UpdateAsync(string id, TrainScheduleBase trainSchedule)
         {
 
@@ -68,7 +71,7 @@ namespace web_service.Operation
             return updatedDocument;
         }
 
-
+        // delete a train
         public async Task<bool> DeleteAsync(string id)
         {
             var filter = Builders<TrainScheduleModel>.Filter.Eq("_id", id);
@@ -80,6 +83,8 @@ namespace web_service.Operation
             var result = await _trainScheduleCollection.UpdateOneAsync(filter, update);
             return result.ModifiedCount > 0;
         }
+
+        // function to fetch active trains
         public async Task<List<TrainScheduleModel>> GetActiveAsync()
         {
             var filter = Builders<TrainScheduleModel>.Filter.And(
@@ -92,6 +97,8 @@ namespace web_service.Operation
 
             return users;
         }
+
+        // function to fetch all trains
         public async Task<List<TrainScheduleModel>> GetAllAsync()
         {
             var filter = Builders<TrainScheduleModel>.Filter.And(

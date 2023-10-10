@@ -23,6 +23,10 @@ public class TrainScheduleController : ControllerBase
         _mongoDBService = mongoDBService;
     }
 
+
+    // 'GET' request to fetch a train by its ID
+    
+    //authorization  levels for all the users
     [Authorize(Roles = "backOffice,travelAgent,traveller")]
     [HttpGet]
     async public Task<IActionResult> Get([FromQuery] string? id)
