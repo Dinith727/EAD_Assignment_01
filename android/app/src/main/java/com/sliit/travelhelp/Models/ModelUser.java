@@ -1,3 +1,4 @@
+//users model
 package com.sliit.travelhelp.Models;
 
 public class ModelUser {
@@ -13,6 +14,7 @@ public class ModelUser {
         this.fullName = fullName;
     }
 
+    //getters and setters
     public String getId() {
         return id;
     }

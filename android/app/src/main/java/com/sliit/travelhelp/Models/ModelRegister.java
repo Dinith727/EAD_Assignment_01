@@ -1,3 +1,4 @@
+//register model
 package com.sliit.travelhelp.Models;
 
 public class ModelRegister {
@@ -12,7 +13,7 @@ public class ModelRegister {
         this.password = password;
         this.email = email;
     }
-
+    //getters and setters
     public String getNIC() {
         return NIC;
     }

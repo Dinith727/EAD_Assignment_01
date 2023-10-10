@@ -1,3 +1,4 @@
+//reservations model
 package com.sliit.travelhelp.Models;
 
 import com.fasterxml.jackson.*;
@@ -27,6 +28,7 @@ public class ModelReservation {
     @JsonProperty("train")
     private ModelTrain train;
 
+    //setters and getters
     public BsonObjectId getId() {
         return id;
     }
@@ -59,5 +61,5 @@ public class ModelReservation {
         this.train = train;
     }
 
-    // getters and setters
+    
 }

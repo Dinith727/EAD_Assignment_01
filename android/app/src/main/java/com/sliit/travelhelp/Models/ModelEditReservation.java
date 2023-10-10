@@ -1,3 +1,4 @@
+//edit reservation model
 package com.sliit.travelhelp.Models;
 
 public class ModelEditReservation {
@@ -16,7 +17,7 @@ public class ModelEditReservation {
     private String agentNote;
 
 
-
+    //getters and setters
     public String getDate() {
         return date;
     }

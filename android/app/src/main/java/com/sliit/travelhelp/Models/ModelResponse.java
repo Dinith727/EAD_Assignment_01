@@ -1,3 +1,4 @@
+//response model
 package com.sliit.travelhelp.Models;
 
 public class ModelResponse<T> {
@@ -9,6 +10,7 @@ public class ModelResponse<T> {
         this.data = data;
     }
 
+    //getters and setters
     public int getStatus() {
         return status;
     }

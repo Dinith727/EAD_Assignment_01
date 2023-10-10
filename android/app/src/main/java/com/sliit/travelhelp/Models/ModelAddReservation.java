@@ -22,41 +22,43 @@ public class ModelAddReservation {
 
 
     // Getters and setters
-
+    //date getter
     public String getDate() {
         return date;
     }
-
+    //agentNote getter
     public String getAgentNote() {
         return agentNote;
     }
-
+    //date setter
     public void setDate(String date) {
         this.date = date;
     }
-
+    //train getter
     public String getTrain() {
         return train;
     }
 
+    //train setter
     public void setTrain(String train) {
         this.train = train;
     }
 
+    //travel agent getter
     public String getTravelAgent() {
         return travelAgent;
     }
-
+    //travel agent setter
     public void setTravelAgent(String travelAgent) {
         this.travelAgent = travelAgent;
     }
 
 
-
+    //trainclass getter
     public String getTrainClass() {
         return trainClass;
     }
-
+    //trainclass settter
     public void setTrainClass(String trainClass) {
         this.trainClass = trainClass;
     }

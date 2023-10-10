@@ -1,3 +1,4 @@
+//login model
 package com.sliit.travelhelp.Models;
 
 public class ModelLogin {
@@ -10,7 +11,7 @@ public class ModelLogin {
         this.username = username;
         this.password = password;
     }
-
+    //getters and setters
     public String getUsername() {
         return username;
     }

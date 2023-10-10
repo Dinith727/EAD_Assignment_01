@@ -1,3 +1,4 @@
+//Trains model
 package com.sliit.travelhelp.Models;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -14,6 +15,7 @@ public class ModelTrain {
         this.to = to;
     }
 
+    //getters and setters
     public String getFrom() {
         return from;
     }
@@ -30,5 +32,5 @@ public class ModelTrain {
         this.to = to;
     }
 
-    // getters and setters
+    
 }
