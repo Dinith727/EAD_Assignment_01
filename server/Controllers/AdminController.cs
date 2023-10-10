@@ -247,7 +247,7 @@ public class AdminController : ControllerBase
         }
     }
 
-
+//password change for admin users
     [Authorize(Roles = "backOffice,travelAgent")]
     [HttpPost("change-pw")]
     async public Task<IActionResult> ChangePassword([FromBody] ResChangePassword res)
