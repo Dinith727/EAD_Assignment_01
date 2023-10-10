@@ -1,3 +1,6 @@
+/*
+Form to add reservations by travel agent */
+
 import React, { useState, useEffect } from "react";
 import { Form, Button, Row, Col, Alert } from "react-bootstrap"; // Import Alert component
 import { getAllTravelers } from "../utils/api/traveller";
@@ -20,21 +23,25 @@ const TrainTicketReservationForm = () => {
 	const [successMessage, setSuccessMessage] = useState(""); // State for success message
 
 	useEffect(() => {
+		//get all users
 		async function getUsers() {
 			const _res = await getAllTravelers();
 			if (_res.data) {
 				setUsers(_res.data);
 			}
 		}
+		//get all trains
 		async function getTrains() {
 			const _res = await getAllActiveTrains();
 			setTrains(_res.data);
 		}
+		//get all the travel agents
 		async function getTravelAgent() {
 			const _res = await getAdmin();
 			setFormData((prevData) => ({
 				...prevData,
 				travelAgent: _res.data._id,
+				// Update the travelAgent field in the form data.
 			}));
 		}
 		getTravelAgent();

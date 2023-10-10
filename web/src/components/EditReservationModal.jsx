@@ -1,3 +1,6 @@
+/*
+Form to edit a reservation
+*/
 import React, { useEffect, useState } from "react";
 import { Modal, Button, Form, Row, Col } from "react-bootstrap";
 import { getAdmin } from "../utils/api/admin";
@@ -9,7 +12,7 @@ const EditReservationModal = ({ show, reservation, onSave, onClose }) => {
 	const [editedReservation, setEditedReservation] = useState({
 		...reservation,
 	});
-
+// function to update the editedReservation state.
 	const handleChange = (e) => {
 		const { name, value } = e.target;
 		setEditedReservation({
@@ -27,7 +30,7 @@ const EditReservationModal = ({ show, reservation, onSave, onClose }) => {
 
 	const [users, setUsers] = useState([]);
 	const [trains, setTrains] = useState([]);
-
+//fetch all travellers
 	useEffect(() => {
 		async function getUsers() {
 			const _res = await getAllTravelers();
@@ -35,6 +38,7 @@ const EditReservationModal = ({ show, reservation, onSave, onClose }) => {
 				setUsers(_res.data);
 			}
 		}
+		//fetch all trains
 		async function getTrains() {
 			const _res = await getAllActiveTrains();
 			setTrains(_res.data);
@@ -52,7 +56,7 @@ const EditReservationModal = ({ show, reservation, onSave, onClose }) => {
 		getTrains();
 	}, []);
 	//console.log(editedReservation);
-
+//modal for the reservation edit
 	return (
 		<Modal show={show} onHide={onClose}>
 			<Modal.Header closeButton>
