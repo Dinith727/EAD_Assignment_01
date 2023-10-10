@@ -20,7 +20,7 @@ namespace web_service.Operation
         {
             _adminCollection = adminCollection;
         }
-
+        //admin create operations
         public async Task CreateAsync(AdminModel adminModel)
         {
             await _adminCollection.InsertOneAsync(adminModel);
@@ -36,7 +36,7 @@ namespace web_service.Operation
             var filter = Builders<AdminModel>.Filter.Eq("username", username);
             return await _adminCollection.Find(filter).FirstOrDefaultAsync();
         }
-
+        //admin update operations
         public async Task<AdminModel> UpdateAsync(string id, AdminModel admin)
 
 
@@ -74,7 +74,7 @@ namespace web_service.Operation
 
             return updatedDocument;
         }
-
+        //admin Delete operations
         public async Task<bool> DeleteAsync(string id)
         {
             var filter = Builders<AdminModel>.Filter.Eq("_id", id);
@@ -86,7 +86,7 @@ namespace web_service.Operation
             var result = await _adminCollection.UpdateOneAsync(filter, update);
             return result.ModifiedCount > 0;
         }
-
+        //activate admin users operations
         public async Task<bool> ActivateAsync(string id, bool active)
         {
             var filter = Builders<AdminModel>.Filter.Eq("_id", id);
@@ -108,6 +108,7 @@ namespace web_service.Operation
 
             return users;
         }
+        //get travel agents
         public async Task<List<AdminModel>> getAgents()
         {
             var filter = Builders<AdminModel>.Filter.And(
@@ -120,6 +121,7 @@ namespace web_service.Operation
 
             return users;
         }
+        // get all admin operations
         public async Task<List<AdminModel>> GetAllAsync()
         {
             var filter = Builders<AdminModel>.Filter.And(

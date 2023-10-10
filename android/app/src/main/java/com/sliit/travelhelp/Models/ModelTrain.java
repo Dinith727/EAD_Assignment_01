@@ -1,4 +1,4 @@
-//Trains model
+//This code is for Train models
 package com.sliit.travelhelp.Models;
 
 import com.fasterxml.jackson.annotation.JsonProperty;

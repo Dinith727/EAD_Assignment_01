@@ -1,4 +1,4 @@
-//login model
+//This code is for travellers login
 package com.sliit.travelhelp.Models;
 
 public class ModelLogin {

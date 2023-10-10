@@ -1,4 +1,4 @@
-//users model
+//This code is the User model
 package com.sliit.travelhelp.Models;
 
 public class ModelUser {
