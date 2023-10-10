@@ -1,3 +1,4 @@
+//User Functions are in this Page
 import React, { useState, useEffect } from "react";
 import { Table, Button, Alert } from "react-bootstrap";
 import { activateAdmin, deleteAdmin, getAllAdmins } from "../utils/api/admin";

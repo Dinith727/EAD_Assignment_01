@@ -1,3 +1,4 @@
+//Edit Admin Functions
 import React, { useState } from "react";
 import { Modal, Button, Form, Row, Col } from "react-bootstrap";
 import { updateAdmin } from "../utils/api/admin";
