@@ -1,4 +1,4 @@
-//admin model
+//Admin model
 using BCrypt.Net;
 using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
