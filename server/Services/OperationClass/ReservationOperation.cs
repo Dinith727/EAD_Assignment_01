@@ -1,4 +1,6 @@
-//CRUD operations that can be performed on reservations model
+/*
+CRUD operations that can be performed on reservations model
+*/
 
 using System.Threading.Tasks;
 using web_service.Models;
@@ -182,12 +184,14 @@ namespace web_service.Operation
         public async Task<bool> DeleteAsync(string id)
         {
             var filter = Builders<ReservationModel>.Filter.Eq("_id", id);
+            // Define an update operation to set multiple fields for the delete operation.
             var update = Builders<ReservationModel>.Update
                 .Set("_isDeleted", true)
                 .Set("active", false)
                 .Set("published", false);
 
             var result = await _reservationCollection.UpdateOneAsync(filter, update);
+            // If ModifiedCount is greater than 0, it means a document was updated as a deleted document.
             return result.ModifiedCount > 0;
         }
 
