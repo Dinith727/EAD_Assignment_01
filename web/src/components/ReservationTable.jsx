@@ -1,3 +1,7 @@
+/* 
+A table of reservations that allows travel agent to edit and delete reservations
+*/
+
 import React, { useState } from "react";
 import { Table, Button, Alert } from "react-bootstrap"; // Import Alert component
 import EditReservationModal from "./EditReservationModal";
@@ -10,17 +14,18 @@ const ReservationTable = ({ reservations }) => {
 	const [showDeleteModal, setShowDeleteModal] = useState(false);
 	const [reservationToDelete, setReservationToDelete] = useState(null);
 	const [deleteError, setDeleteError] = useState(null); // State to track delete errors
-
+// Function to edit a resrevation
 	const handleEditClick = (reservation) => {
 		setSelectedReservation(reservation);
 		setShowEditModal(true);
 	};
+  // Function to close the edit modal
 
 	const handleEditModalClose = () => {
 		setShowEditModal(false);
 		setSelectedReservation(null);
 	};
-
+//Function to delete reservations
 	const handleDeleteClick = (reservation) => {
 		setReservationToDelete(reservation);
 		setShowDeleteModal(true);
