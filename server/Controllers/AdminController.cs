@@ -22,7 +22,7 @@ public class AdminController : ControllerBase
         _mongoDBService = mongoDBService;
     }
 
-
+    //admin user controller
     [Authorize(Roles = "backOffice,travelAgent")]
     [HttpGet]
     async public Task<IActionResult> Get([FromQuery] string? id)
@@ -42,7 +42,7 @@ public class AdminController : ControllerBase
                 {
                     ErrorCode = 404,
                     Message = "Not Found",
-                    Details = "Requested admin not Found"
+                    Details = "Requested admin not Found" //error handling
                 });
             }
             val.password = "";
@@ -57,10 +57,11 @@ public class AdminController : ControllerBase
         {
 
             ErrorFormatter _error = new ErrorFormatter(ex);
-            return StatusCode(500, _error.Get("Duplicate Field Found"));
+            return StatusCode(500, _error.Get("Duplicate Field Found")); //validation
         }
     }
 
+    //access permission controller for backoffice
     [Authorize(Roles = "backOffice")]
     [HttpGet("all")]
     async public Task<IActionResult> GetAll([FromQuery] bool active)
@@ -95,7 +96,7 @@ public class AdminController : ControllerBase
         }
 
     }
-
+    //access permission controller for travel agent
     [Authorize(Roles = "traveller")]
     [HttpGet("agents")]
     async public Task<IActionResult> GetAllAgents()
@@ -246,7 +247,7 @@ public class AdminController : ControllerBase
         }
     }
 
-
+//password change for admin users
     [Authorize(Roles = "backOffice,travelAgent")]
     [HttpPost("change-pw")]
     async public Task<IActionResult> ChangePassword([FromBody] ResChangePassword res)
