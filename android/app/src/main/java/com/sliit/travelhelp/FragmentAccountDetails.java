@@ -34,7 +34,7 @@ import retrofit2.Response;
 public class FragmentAccountDetails extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
+    // the fragment initialization parameters
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
 
@@ -91,14 +91,14 @@ public class FragmentAccountDetails extends Fragment {
         TVNIC.setText(SharedPreferenceHelper.NIC);
 
 
-
+        //password change
         view.findViewById(R.id.btn_account_change_password).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Navigation.findNavController(view).navigate(R.id.fragmentChangePassoword);
             }
         });
-
+        //logout
         view.findViewById(R.id.btn_account_logout).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -131,7 +131,7 @@ public class FragmentAccountDetails extends Fragment {
 
             }
         });
-
+        //deactivate user
         view.findViewById(R.id.btn_account_deactivate).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
