@@ -1,4 +1,4 @@
-Defining CRUD Operations To Be 
+// Defining CRUD Operations of Train Shedule Comonent
 
 using System.Threading.Tasks;
 using web_service.Models;

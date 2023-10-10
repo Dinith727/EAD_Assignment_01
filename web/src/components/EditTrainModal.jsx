@@ -1,3 +1,4 @@
+// Edit Train Model
 import React, { useState } from "react";
 import { Button, Modal, Form, Alert } from "react-bootstrap";
 import { updateTrain } from "../utils/api/trainShedule";
@@ -7,6 +8,7 @@ const EditTrainModal = ({ isOpen, onClose, train }) => {
 	const [errorMessage, setErrorMessage] = useState("");
 	const [successMessage, setSuccessMessage] = useState("");
 
+	// handling save funtion
 	const handleSave = async () => {
 		try {
 			const _res = await updateTrain(editedTrainData);
@@ -24,6 +26,7 @@ const EditTrainModal = ({ isOpen, onClose, train }) => {
 		}
 	};
 
+	// handling publish function
 	const handlePublish = async () => {
 		try {
 			const _res = await updateTrain({

@@ -1,3 +1,4 @@
+// Add Train Forum
 import React, { useState } from "react";
 import { Form, Button, Row, Col, Alert, FormText } from "react-bootstrap";
 import { addTrain } from "../utils/api/trainShedule";
@@ -51,6 +52,8 @@ const AddTrainForm = () => {
 	// 		return error;
 	// 	}
 	// };
+
+	// handel Subimt function
 	const handleSubmit = async (e) => {
 		e.preventDefault();
 
