@@ -74,6 +74,7 @@ const ReservationTable = ({ reservations }) => {
 						<th>#</th>
 						<th>Departure Station</th>
 						<th>Arrival Station</th>
+						<th>Train</th>
 						<th>Actions</th>
 					</tr>
 				</thead>
@@ -83,6 +84,7 @@ const ReservationTable = ({ reservations }) => {
 							<td>{index + 1}</td>
 							<td>{reservation.train[0].from}</td>
 							<td>{reservation.train[0].to}</td>
+							<td>{reservation.train[0].trainName}</td>
 							<td>
 								<Button
 									variant="primary"
