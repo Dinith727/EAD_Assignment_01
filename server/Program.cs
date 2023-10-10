@@ -10,14 +10,14 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 
 builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+// https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 
 builder.Services.Configure<MongoDBSettings>(builder.Configuration.GetSection("MongoDB"));
 builder.Services.AddSingleton<MongoDBService>();
-
+// Load JWT configuration settings
 var configuration = builder.Configuration;
 var jwtConfig = new JwtConfiguration();
 configuration.GetSection("Jwt").Bind(jwtConfig);
@@ -28,6 +28,7 @@ builder.Services.AddAuthentication(options =>
         options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
         options.DefaultScheme = JwtBearerDefaults.AuthenticationScheme;
     })
+    // Validate JWT issuer, audience, lifetime, and signing key
     .AddJwtBearer(
        options => options.TokenValidationParameters = new TokenValidationParameters
        {
@@ -54,7 +55,7 @@ app.UseCors(option => option.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod())
 
 app.UseAuthentication();
 app.UseAuthorization();
-
+// Map controllers 
 app.MapControllers();
 
 app.Run();
