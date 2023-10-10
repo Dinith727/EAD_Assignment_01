@@ -1,3 +1,5 @@
+//CRUD operations for the traveller model
+
 using System.Threading.Tasks;
 using web_service.Models;
 using web_service.Helper;
@@ -13,27 +15,33 @@ namespace web_service.Operation
     {
         private readonly IMongoCollection<TravellerModel> _travellerCollection;
 
+        //Constructor
         public TravellerOperation(IMongoCollection<TravellerModel> travellerCollection)
         {
             _travellerCollection = travellerCollection;
         }
 
+        //Insert
         public async Task CreateAsync(TravellerModel travellerModel)
         {
             await _travellerCollection.InsertOneAsync(travellerModel);
         }
 
+        //Findby Id
         public async Task<TravellerModel> FindByIdAsync(string id)
         {
             var filter = Builders<TravellerModel>.Filter.Eq("_id", id);
             return await _travellerCollection.Find(filter).FirstOrDefaultAsync();
         }
+
+        //Findby Email
         public async Task<TravellerModel> FindByEmailAsync(string email)
         {
             var filter = Builders<TravellerModel>.Filter.Eq("email", email);
             return await _travellerCollection.Find(filter).FirstOrDefaultAsync();
         }
 
+        //Update
         public async Task<TravellerModel> UpdateAsync(string id, TravellerModel traveller)
         {
 
