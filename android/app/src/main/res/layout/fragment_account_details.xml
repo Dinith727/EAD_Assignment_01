@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".FragmentAccountDetails" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rounded_bg"
+        android:orientation="vertical"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:paddingLeft="32dp"
+        android:paddingTop="36dp"
+        android:paddingRight="16dp"
+        android:paddingBottom="16dp">
+
+        <TextView
+            android:id="@+id/tv_account_greeting"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="monospace"
+            android:text="@string/home_greeting"
+            android:textAlignment="textStart"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:textColor="@color/white"
+            android:textFontWeight="900"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_account_greeting_sub"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="32dp"
+            android:paddingBottom="8dp"
+            android:text="@string/account_greeting_sub"
+            android:textColor="@color/white" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_margin="16dp"
+        android:paddingTop="16dp"
+        android:background="@drawable/rounded_bg_grey_dark_200"
+        android:gravity="center">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingLeft="48dp"
+            android:paddingRight="48dp"
+
+
+            >
+
+            <TextView
+                android:id="@+id/txt_account_email_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="left"
+                android:layout_marginLeft="8dp"
+                android:text="@string/txt_email"
+                android:textColor="@color/text_gray_dark"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/txt_account_email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:gravity="right"
+
+                android:paddingLeft="16dp"
+                android:text="Test@email.com"
+                android:textColor="@color/black_primary"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingLeft="48dp"
+            android:paddingRight="48dp"
+            >
+
+
+            <TextView
+                android:id="@+id/txt_account_full_name_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="left"
+                android:text="@string/txt_full_name"
+                android:textColor="@color/text_gray_dark"
+                android:textSize="20sp"
+                android:layout_marginLeft="8dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/txt_account_full_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="right"
+                android:layout_marginRight="8dp"
+
+                android:paddingLeft="16dp"
+                android:text="Nihal Perera"
+                android:textColor="@color/black_primary"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingLeft="48dp"
+            android:paddingRight="48dp"
+            >
+
+
+            <TextView
+                android:id="@+id/txt_account_nic_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="left"
+                android:text="@string/txt_nic"
+                android:textColor="@color/text_gray_dark"
+                android:textSize="20sp"
+                android:layout_marginLeft="8dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/txt_account_nic_number"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="right"
+                android:layout_marginRight="8dp"
+
+                android:paddingLeft="16dp"
+                android:text="993000303V"
+                android:textColor="@color/black_primary"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/btn_account_change_password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@color/green_primary"
+                android:textColor="@color/grey_secondary"
+                android:textStyle="bold"
+                android:text="Change Password"/>
+
+            <Button
+                android:id="@+id/btn_account_logout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@color/black_primary"
+                android:textColor="@color/grey_secondary"
+                android:textStyle="bold"
+                android:text="Logout"/>
+
+            <Button
+                android:id="@+id/btn_account_deactivate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@color/red_primary"
+                android:textColor="@color/grey_secondary"
+                android:textStyle="bold"
+                android:text="Deactivate Account"/>
+        </LinearLayout>
+
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_reservation"
+    app:startDestination="@id/fragmnetListReservation">
+
+    <fragment
+        android:id="@+id/fragmentAddReservation"
+        android:name="com.sliit.travelhelp.FragmentAddReservation"
+        android:label="fragment_add_reservation"
+        tools:layout="@layout/fragment_add_reservation" >
+        <action
+            android:id="@+id/action_fragmentAddReservation_to_fragmentReservationSummery"
+            app:destination="@id/fragmentReservationSummery" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentEditReservation"
+        android:name="com.sliit.travelhelp.FragmentEditReservation"
+        android:label="fragment_edit_reservation"
+        tools:layout="@layout/fragment_edit_reservation" >
+        <action
+            android:id="@+id/action_fragmentEditReservation_to_fragmentReservationSummery"
+            app:destination="@id/fragmentReservationSummery" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmnetListReservation"
+        android:name="com.sliit.travelhelp.FragmnetListReservation"
+        android:label="fragment_fragmnet_list_reservation"
+        tools:layout="@layout/fragment_fragmnet_list_reservation" >
+        <action
+            android:id="@+id/action_fragmnetListReservation_to_fragmentAddReservation"
+            app:destination="@id/fragmentAddReservation" />
+        <action
+            android:id="@+id/action_fragmnetListReservation_to_fragmentEditReservation"
+            app:destination="@id/fragmentEditReservation" />
+        <action
+            android:id="@+id/action_fragmnetListReservation_to_fragmentReservationSummery"
+            app:destination="@id/fragmentReservationSummery" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentReservationSummery"
+        android:name="com.sliit.travelhelp.FragmentReservationSummery"
+        android:label="fragment_reservation_summery"
+        tools:layout="@layout/fragment_reservation_summery" >
+        <action
+            android:id="@+id/action_fragmentReservationSummery_to_fragmnetListReservation"
+            app:destination="@id/fragmnetListReservation" />
+
+    </fragment>
+</navigation>

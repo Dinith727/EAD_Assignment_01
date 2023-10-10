@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_account"
+    app:startDestination="@id/fragmentAccountDetails">
+
+    <fragment
+        android:id="@+id/fragmentAccountDetails"
+        android:name="com.sliit.travelhelp.FragmentAccountDetails"
+        android:label="fragment_account_details"
+        tools:layout="@layout/fragment_account_details" >
+        <action
+            android:id="@+id/action_fragmentAccountDetails_to_fragmentChangePassoword"
+            app:destination="@id/fragmentChangePassoword" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentChangePassoword"
+        android:name="com.sliit.travelhelp.FragmentChangePassoword"
+        android:label="fragment_change_passoword"
+        tools:layout="@layout/fragment_change_passoword" >
+        <action
+            android:id="@+id/action_fragmentChangePassoword_to_fragmentAccountDetails"
+            app:destination="@id/fragmentAccountDetails" />
+    </fragment>
+</navigation>
