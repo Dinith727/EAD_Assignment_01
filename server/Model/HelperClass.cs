@@ -35,7 +35,8 @@ namespace web_service.Helper
 
 
     }
-
+/*helper classes to maintain the structure and to reuse the code. */
+//defining the properties of a reservation related object
     public class ReservationBase
     {
         public string? _id { get; set; } = null;

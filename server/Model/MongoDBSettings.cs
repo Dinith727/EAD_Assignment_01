@@ -1,7 +1,7 @@
 namespace web_service.Models
 {
 
-
+// Reference : https://www.mongodb.com/developer/languages/csharp/create-restful-api-dotnet-core-mongodb/
     public class MongoDBSettings
     {
 
