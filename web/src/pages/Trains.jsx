@@ -1,3 +1,4 @@
+//  Trains Page
 import AddTrainForm from "../components/AddTrainForm";
 import Header from "../components/Header";
 import TrainList from "../components/TrainList";

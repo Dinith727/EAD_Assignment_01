@@ -1,3 +1,4 @@
+// train details component
 import React, { useState } from "react";
 import { Button, Alert, Badge } from "react-bootstrap";
 import { deleteTrain } from "../utils/api/trainShedule";
@@ -11,6 +12,7 @@ const TrainDetail = ({ train }) => {
 	const [errorMessage, setErrorMessage] = useState("");
 	const [successMessage, setSuccessMessage] = useState("");
 
+	// handle edits 
 	const handleEdit = () => {
 		setEditModalOpen(true);
 	};
@@ -27,6 +29,7 @@ const TrainDetail = ({ train }) => {
 		setDeleteModalOpen(false);
 	};
 
+	// delete train funtion
 	const handleConfirmDelete = async () => {
 		try {
 			const _res = await deleteTrain(train._id);

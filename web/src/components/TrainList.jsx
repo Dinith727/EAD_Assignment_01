@@ -1,3 +1,4 @@
+// Train List Component
 import React, { useEffect, useState } from "react";
 import TrainDetail from "./TrainDetail";
 import { getAllTrains } from "../utils/api/trainShedule";
@@ -21,6 +22,7 @@ const TrainList = () => {
 		},
 	]);
 
+	// populate data to the list
 	useEffect(() => {
 		async function getTrains() {
 			const _res = await getAllTrains();

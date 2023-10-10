@@ -1,5 +1,6 @@
 import base_api from "./_base.api";
 
+// Add train API Function
 export async function addTrain(trainData) {
 	try {
 		const _res = await base_api.post("/trainschedule/add", trainData);
@@ -9,6 +10,7 @@ export async function addTrain(trainData) {
 	}
 }
 
+// Get All Trains Function
 export async function getAllTrains() {
 	try {
 		const _res = await base_api.get(
@@ -20,6 +22,7 @@ export async function getAllTrains() {
 	}
 }
 
+// Delete Tarin Function
 export async function deleteTrain(id) {
 	try {
 		const _res = await base_api.delete("/trainschedule/delete?id=" + id);
@@ -29,6 +32,7 @@ export async function deleteTrain(id) {
 	}
 }
 
+// Update Train Function
 export async function updateTrain(train) {
 	try {
 		const _res = await base_api.post("/trainschedule/update", train);
@@ -39,6 +43,7 @@ export async function updateTrain(train) {
 	}
 }
 
+// function to get all active trains
 export async function getAllActiveTrains() {
 	try {
 		const _res = await base_api.get("/trainschedule/active-trains");
