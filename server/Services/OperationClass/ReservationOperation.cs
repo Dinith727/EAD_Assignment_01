@@ -241,7 +241,8 @@ namespace web_service.Operation
                         { "status", 1 },
                         { "date", 1 },
                         { "train.to", 1 },
-                        { "train.from", 1 }
+                        { "train.from", 1 },
+                        { "train.trainName", 1},
                     }
                 }
             };
