@@ -1,3 +1,4 @@
+// This controller handels HTTP Requests For auth Function login/createuser
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
@@ -12,6 +13,7 @@ using web_service.Models;
 using web_service.Utility;
 using web_service.Formatter;
 
+//http request to login
 [Route("api/[controller]")]
 [ApiController]
 public class AuthController : ControllerBase
@@ -134,7 +136,7 @@ public class AuthController : ControllerBase
 
 
     }
-
+    //jwt generation
     private string GenerateJwtToken(string role, string _id, string username)
     {
         var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["Jwt:Key"]));

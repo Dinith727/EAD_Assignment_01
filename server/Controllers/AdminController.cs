@@ -1,4 +1,4 @@
-
+// This controller handels HTTP Requests For admin management Function
 using Microsoft.AspNetCore.Mvc;
 using System;
 using web_service.Services;
