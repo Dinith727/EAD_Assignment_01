@@ -1,3 +1,5 @@
+
+//This code is for reservation summery view
 package com.sliit.travelhelp;
 
 import android.content.DialogInterface;

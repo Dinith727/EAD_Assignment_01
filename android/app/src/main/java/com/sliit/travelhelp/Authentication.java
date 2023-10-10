@@ -1,3 +1,4 @@
+//this code is for account authentication
 package com.sliit.travelhelp;
 
 import androidx.appcompat.app.AppCompatActivity;

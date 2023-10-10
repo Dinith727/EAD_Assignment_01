@@ -1,3 +1,4 @@
+//this code is for edit reservations by travellers
 package com.sliit.travelhelp;
 
 import android.os.Bundle;

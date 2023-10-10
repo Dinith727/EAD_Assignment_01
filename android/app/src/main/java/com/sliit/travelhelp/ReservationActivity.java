@@ -1,3 +1,5 @@
+//this code is for reservation activity in the system
+
 package com.sliit.travelhelp;
 
 import androidx.appcompat.app.AppCompatActivity;
