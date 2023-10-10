@@ -1,4 +1,4 @@
-//reservations model
+//This code is for view reservation of travellers
 package com.sliit.travelhelp.Models;
 
 import com.fasterxml.jackson.*;

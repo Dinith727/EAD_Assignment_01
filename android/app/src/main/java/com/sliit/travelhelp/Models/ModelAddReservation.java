@@ -1,3 +1,4 @@
+//This code is for add reservation by travellers
 package com.sliit.travelhelp.Models;
 
 import com.google.gson.annotations.SerializedName; // You may need to import this annotation if you're using GSON

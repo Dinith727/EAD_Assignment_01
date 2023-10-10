@@ -1,4 +1,4 @@
-//register model
+//This code is for register the  travellers account
 package com.sliit.travelhelp.Models;
 
 public class ModelRegister {

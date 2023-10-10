@@ -1,4 +1,4 @@
-//response model
+//This code is for responses by travellers
 package com.sliit.travelhelp.Models;
 
 public class ModelResponse<T> {

@@ -1,3 +1,4 @@
+//login component
 import React, { useState } from "react";
 import {
 	Container,
@@ -30,7 +31,7 @@ const LoginComp = () => {
 			[name]: value,
 		});
 	};
-
+	//toggle users type
 	const toggleUserRole = () => {
 		setUserRole(userRole === "backOffice" ? "travelAgent" : "backOffice");
 	};
@@ -54,6 +55,7 @@ const LoginComp = () => {
 	}
 
 	return (
+		//login form
 		<Container
 			style={{
 				paddingTop: "100px",
