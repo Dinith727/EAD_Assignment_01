@@ -1,3 +1,4 @@
+// model for train shedules
 using BCrypt.Net;
 using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;

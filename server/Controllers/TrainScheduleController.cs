@@ -1,4 +1,4 @@
-
+// This controller handels HTTP Requests For Train management Function
 using Microsoft.AspNetCore.Mvc;
 using System;
 using web_service.Services;
@@ -56,7 +56,9 @@ public class TrainScheduleController : ControllerBase
 
     }
 
+    // defining authorized roles to perform this function.
     [Authorize(Roles = "backOffice")]
+    // 'GET' request to fetch all trains list
     [HttpGet("all-trains")]
     async public Task<IActionResult> GetAll([FromQuery] bool active)
     {
@@ -82,6 +84,7 @@ public class TrainScheduleController : ControllerBase
                 data = val
             });
         }
+        // error handling 
         catch (System.Exception ex)
         {
 
@@ -92,6 +95,7 @@ public class TrainScheduleController : ControllerBase
     }
 
     [Authorize(Roles = "backOffice,travelAgent,traveller")]
+    // Http 'GET' request to fetch all active trains
     [HttpGet("active-trains")]
     async public Task<IActionResult> GetAllUser()
     {
@@ -113,8 +117,10 @@ public class TrainScheduleController : ControllerBase
 
     }
 
+    // only backoffice users can perform this function
     [Authorize(Roles = "backOffice")]
 
+    // HTTP 'POST' request to add new trains
     [HttpPost("add")]
     async public Task<IActionResult> Add([FromBody] TrainScheduleModel train)
     {
@@ -140,7 +146,9 @@ public class TrainScheduleController : ControllerBase
         }
     }
 
+    // only backoffice users can perform this function
     [Authorize(Roles = "backOffice")]
+    // Update Request
     [HttpPost("update")]
     async public Task<IActionResult> Update([FromBody] TrainScheduleBase _train)
     {
@@ -192,7 +200,9 @@ public class TrainScheduleController : ControllerBase
 
     }
 
+    // only backoffice users can perform this function
     [Authorize(Roles = "backOffice")]
+    // HTTP Delete function
     [HttpDelete("delete")]
     // public IActionResult Update([FromBody] AdminModel model)
     async public Task<IActionResult> Delete([FromQuery] string id)
