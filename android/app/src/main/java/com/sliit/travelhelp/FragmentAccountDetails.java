@@ -1,3 +1,4 @@
+//this code is for account details view
 package com.sliit.travelhelp;
 
 import android.content.DialogInterface;
