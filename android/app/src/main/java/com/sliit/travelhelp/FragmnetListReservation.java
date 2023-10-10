@@ -1,3 +1,4 @@
+//This code is for reservation list view
 package com.sliit.travelhelp;
 
 import android.os.Bundle;

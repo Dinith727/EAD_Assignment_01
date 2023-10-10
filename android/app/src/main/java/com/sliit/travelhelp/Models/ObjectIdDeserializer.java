@@ -1,3 +1,4 @@
+//this is the object deserilizer
 package com.sliit.travelhelp.Models;
 
 import com.fasterxml.jackson.core.JsonParser;

@@ -1,3 +1,4 @@
+//this code is for add reservations
 package com.sliit.travelhelp;
 
 import android.os.Bundle;

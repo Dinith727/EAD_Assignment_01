@@ -1,3 +1,4 @@
+//create user component
 import React, { useState, useEffect } from "react";
 import { Form, Button, Col, Row, Alert } from "react-bootstrap";
 import { addUser } from "../utils/api/admin";
@@ -42,7 +43,7 @@ const CreateUser = () => {
 				!hasSpecialCharacters
 		);
 	};
-
+	//password change
 	const handleConfirmPasswordChange = (e) => {
 		setConfirmPassword(e.target.value);
 		setPasswordMatchError(e.target.value !== password);
@@ -95,6 +96,7 @@ const CreateUser = () => {
 	}
 
 	return (
+		//create user form
 		<div
 			style={{
 				width: "500px",

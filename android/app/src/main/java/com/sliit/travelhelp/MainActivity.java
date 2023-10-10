@@ -1,3 +1,4 @@
+//this code is for main activity operations
 package com.sliit.travelhelp;
 
 import static com.google.android.material.internal.ContextUtils.getActivity;

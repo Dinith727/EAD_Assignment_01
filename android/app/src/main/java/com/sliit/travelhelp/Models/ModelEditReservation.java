@@ -1,4 +1,4 @@
-//edit reservation model
+//This code is for edit reservation by travellers
 package com.sliit.travelhelp.Models;
 
 public class ModelEditReservation {
