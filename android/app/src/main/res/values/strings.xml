@@ -1,0 +1,68 @@
+<resources>
+    <string name="app_name">Travel Help</string>
+    <string name="app_host">http://10.0.2.2:5299/api/</string>
+    <string name="app_name_1">Travel</string>
+    <string name="app_name_2">Help</string>
+
+    <string name="menu_home">Home</string>
+    <string name="menu_account">Account</string>
+    <string name="menu_reservation">Reservations</string>
+    <string name="menu_logout">Logout</string>
+
+    <string name="home_greeting">Good Evening</string>
+    <string name="home_greeting_sub">Choose your favourite place to travel...</string>
+    <string name="home_button">Your Reservation</string>
+    <string name="home_txt_menu">Upcoming...</string>
+    <string name="home_txt_no_upcoming">No Upcoming Reservations</string>
+
+    <string name="account_greeting_sub">Custermize your account here</string>
+
+    <string name="item_event_button">View More</string>
+
+
+    <string name="txt_username">Username/Email</string>
+    <string name="txt_empty_dash">---</string>
+    <string name="txt_email">Email</string>
+    <string name="txt_cancel">Cancel</string>
+    <string name="txt_delete">Delete</string>
+    <string name="txt_past">Past</string>
+    <string name="txt_upcoming">UPCOMING</string>
+
+    <string name="txt_add">Add</string>
+    <string name="txt_change">Change</string>
+    <string name="txt_save">Save</string>
+    <string name="txt_submit">Submit</string>
+    <string name="txt_password">Password</string>
+    <string name="txt_password_new">New Password</string>
+    <string name="txt_password_current">Current Password</string>
+    <string name="txt_password_confirm">Confirm Password</string>
+    <string name="txt_nic">NIC Number</string>
+    <string name="txt_full_name">Full Name</string>
+    <string name="txt_login">Sign In</string>
+    <string name="txt_register">Sign up</string>
+
+    <string name="txt_already_acc_1">Already have</string>
+    <string name="txt_already_acc_2">Account ?</string>
+    <string name="txt_create_new_acc_1">Create New</string>
+    <string name="txt_create_new_acc_2">Account</string>
+
+
+    <string name="txt_nic_short">Account</string>
+
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string-array name="arr_select_agent">
+        <item>Select Travel Agent</item>
+
+    </string-array> <string-array name="arr_select_train">
+        <item>Select Train</item>
+    </string-array>
+
+    <string-array name="arr_select_train_class">
+        <item>Business</item>
+        <item>Economic</item>
+    </string-array>
+
+</resources>
