@@ -1,4 +1,7 @@
-
+/*
+Handling HTTP requests on Travellers
+POST , GET , DELETE , DEACTIVATE/ACTIVATE
+*/
 using Microsoft.AspNetCore.Mvc;
 using System;
 using web_service.Services;
@@ -25,6 +28,7 @@ public class TravellerController : ControllerBase
         _mongoDBService = mongoDBService;
     }
 
+    // Ensure that all user authorization levels are considered
     [Authorize(Roles = "backOffice,traveller")]
     [HttpGet]
     async public Task<IActionResult> Get([FromQuery] string? id)
@@ -65,6 +69,7 @@ public class TravellerController : ControllerBase
 
     }
 
+    // Execute a 'GET' request to obtain traveler details, taking into account the user type accessing the information
     [Authorize(Roles = "backOffice,travelAgent")]
     [HttpGet("all")]
     async public Task<IActionResult> GetAll([FromQuery] bool active)
@@ -90,7 +95,7 @@ public class TravellerController : ControllerBase
 
             return Ok(new DataResponse<List<TravellerModel>>
             {
-                status = 200,
+                status = 200, //Success 
                 data = val
             });
         }
@@ -98,7 +103,7 @@ public class TravellerController : ControllerBase
         {
 
             ErrorFormatter _error = new ErrorFormatter(ex);
-            return StatusCode(500, _error.Get("Duplicate Field Found"));
+            return StatusCode(500, _error.Get("Duplicate Field Found")); //Duplicate Error
         }
 
     }
@@ -137,6 +142,7 @@ public class TravellerController : ControllerBase
 
     }
 
+    //'UPDATE' reuquset to add a Traveller
     [Authorize(Roles = "traveller")]
     [HttpPost("update")]
     async public Task<IActionResult> Update([FromBody] TravellerBase _traveller)
@@ -189,6 +195,7 @@ public class TravellerController : ControllerBase
 
     }
 
+    //DEACTIVATE the traveller
     [Authorize(Roles = "traveller")]
     [HttpPost("deactivate")]
     async public Task<IActionResult> Deactivate()
@@ -231,9 +238,9 @@ public class TravellerController : ControllerBase
         }
     }
 
+    //ACTIVATE the traveller
     [Authorize(Roles = "backOffice")]
     [HttpPost("activate")]
-    // public IActionResult Update([FromBody] AdminModel model)
     async public Task<IActionResult> Activate([FromQuery] string id, [FromQuery] bool active)
     {
         try
@@ -253,10 +260,9 @@ public class TravellerController : ControllerBase
         }
     }
 
-
+    //Changing the travleer profile password
     [Authorize(Roles = "traveller")]
     [HttpPost("change-pw")]
-    // public IActionResult Update([FromBody] AdminModel model)
     async public Task<IActionResult> ChangePassword([FromBody] ResChangePassword res)
     {
         try
