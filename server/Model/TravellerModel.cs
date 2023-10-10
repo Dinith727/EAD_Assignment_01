@@ -1,3 +1,5 @@
+//model for travellers
+
 using BCrypt.Net;
 using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
