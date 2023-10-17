@@ -28,10 +28,11 @@ public class TravellerController : ControllerBase
         _mongoDBService = mongoDBService;
     }
 
-    // Ensure that all user authorization levels are considered
+    // GET request for retrieving traveler details
     [Authorize(Roles = "backOffice,traveller")]
     [HttpGet]
     async public Task<IActionResult> Get([FromQuery] string? id)
+    //Implementation for retrieving and returning traveler details
     {
         try
         {
@@ -69,10 +70,11 @@ public class TravellerController : ControllerBase
 
     }
 
-    // Execute a 'GET' request to obtain traveler details, taking into account the user type accessing the information
+    // GET request for retrieving all travelers
     [Authorize(Roles = "backOffice,travelAgent")]
     [HttpGet("all")]
     async public Task<IActionResult> GetAll([FromQuery] bool active)
+    // Implementation for retrieving and returning all travelers
     {
         try
         {
@@ -108,8 +110,10 @@ public class TravellerController : ControllerBase
 
     }
 
+    // POST request for adding a new traveler
     [HttpPost("add")]
     async public Task<IActionResult> Add([FromBody] TravellerModel traveller)
+    // Implementation for adding a new traveler
     {
 
         try
@@ -142,10 +146,11 @@ public class TravellerController : ControllerBase
 
     }
 
-    //'UPDATE' reuquset to add a Traveller
+    // POST request for updating traveler details
     [Authorize(Roles = "traveller")]
     [HttpPost("update")]
     async public Task<IActionResult> Update([FromBody] TravellerBase _traveller)
+    // Implementation for updating traveler details
     {
         try
         {
@@ -195,9 +200,10 @@ public class TravellerController : ControllerBase
 
     }
 
-    //DEACTIVATE the traveller
+    // POST request for deactivating a traveler
     [Authorize(Roles = "traveller")]
     [HttpPost("deactivate")]
+    // POST request for deactivating a traveler
     async public Task<IActionResult> Deactivate()
     {
         try
@@ -217,8 +223,11 @@ public class TravellerController : ControllerBase
             return StatusCode(500, _error.Get("Duplicate Field Found"));
         }
     }
+
+    // DELETE request for deleting a traveler
     [Authorize(Roles = "backOffice")]
     [HttpDelete("delete")]
+    // Implementation for deleting a traveler
     async public Task<IActionResult> Delete([FromQuery] string id)
     {
         try
@@ -238,9 +247,10 @@ public class TravellerController : ControllerBase
         }
     }
 
-    //ACTIVATE the traveller
+    // POST request for activating/deactivating a traveler
     [Authorize(Roles = "backOffice")]
     [HttpPost("activate")]
+    // Implementation for activating/deactivating a traveler
     async public Task<IActionResult> Activate([FromQuery] string id, [FromQuery] bool active)
     {
         try
@@ -260,9 +270,10 @@ public class TravellerController : ControllerBase
         }
     }
 
-    //Changing the travleer profile password
+    // POST request for changing a traveler's password
     [Authorize(Roles = "traveller")]
     [HttpPost("change-pw")]
+    // Implementation for changing a traveler's password
     async public Task<IActionResult> ChangePassword([FromBody] ResChangePassword res)
     {
         try

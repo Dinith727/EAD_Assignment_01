@@ -130,7 +130,7 @@ public class AdminController : ControllerBase
 
     }
 
-    [Authorize(Roles = "backOffice")]
+    // [Authorize(Roles = "backOffice")]
     [HttpPost("add")]
     async public Task<IActionResult> Add([FromBody] AdminModel admin)
     {
